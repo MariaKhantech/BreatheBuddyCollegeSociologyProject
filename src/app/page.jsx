@@ -23,7 +23,7 @@ export default function HomePage() {
   const [isEnvironmentBright, setIsEnvironmentBright] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [chatMessage, setChatMessage] = useState(
-    "Hi there! I'm your AI wellness companion.",
+    "Hi there! I'm your AI Breathwork companion.",
   );
   const [breathingStep, setBreathingStep] = useState("none");
   const [timer, setTimer] = useState(0);
