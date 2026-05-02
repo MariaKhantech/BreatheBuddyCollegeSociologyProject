@@ -4,10 +4,8 @@ import { motion } from "motion/react";
 import { Heart } from "lucide-react";
 
 export default function RobotVisual({
-  isDarkMode,
   isSpeaking,
   breathingStep,
-  setChatMessage,
   setBreathingStep,
   setUserMood,
   setUserReflection,

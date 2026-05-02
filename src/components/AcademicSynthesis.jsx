@@ -35,52 +35,58 @@ export default function AcademicSynthesis({ isDarkMode }) {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className={`space-y-8 text-lg sm:text-xl leading-relaxed font-medium ${isDarkMode ? "text-white/80" : "text-slate-700"}`}
+              className={`space-y-6 text-base sm:text-lg leading-relaxed font-medium ${isDarkMode ? "text-white/80" : "text-slate-700"}`}
             >
-              <p className="indent-12">
+              <p className="indent-8 text-justify">
                 Breathwork is the practice of using intentional breathing
                 techniques to influence physical, emotional, and mental states.
                 It has become increasingly popular because it is simple, low
                 cost, and easy to practice in many settings. Research suggests
                 that breathwork may help reduce stress, improve mood, and
                 support emotional regulation, which makes it a useful strategy
-                for wellness and mental health.
-              </p>
-
-              <p>
-                Fincham et al. (2023) found that breathwork was associated with
-                lower stress, anxiety, and depressive symptoms in randomized
-                controlled trials, showing that the practice has measurable
-                benefits. In addition, Yilmaz Balban et al. (2023) reported that{" "}
-                <span className="italic text-brand-cyan">
-                  “Daily 5-min cyclic sighing has promise as an effective stress
-                  management exercise.”
-                </span>
-              </p>
-
-              <div
-                className={`p-8 rounded-3xl border-l-4 ${isDarkMode ? "bg-white/5 border-brand-cyan/30" : "bg-slate-50 border-brand-cyan/20"}`}
-              >
-                <p className="text-base sm:text-lg leading-relaxed opacity-90 italic">
-                  Because of these benefits, breathwork is often discussed as
-                  both a self-care practice and a possible therapeutic tool.
-                  This essay explains the value of breathwork, its effects on
-                  the body and mind, and why it is gaining attention in health
-                  research.
-                </p>
-              </div>
-
-              <p className="opacity-80">
-                Breathwork refers to the intentional regulation of breathing
-                patterns and has gained attention as a potentially useful tool
-                for stress and anxiety management. In a meta-analysis of
-                randomized controlled trials, Fincham et al. (2023) found that
+                for wellness and mental health. Fincham et al. (2023) found that
                 breathwork was associated with lower stress, anxiety, and
-                depressive symptoms. Likewise, Banushi et al. (2023) reported
-                that a range of breathwork interventions yielded significant
-                improvements in anxiety symptoms. Together, these studies
-                suggest that breathwork may be a practical and accessible
-                approach to supporting mental well-being.
+                depressive symptoms in randomized controlled trials, showing
+                that the practice has measurable benefits. In addition, Yilmaz
+                Balban et al. (2023) reported that “Daily 5-min cyclic sighing
+                has promise as an effective stress management exercise”. Because
+                of these benefits, breathwork is often discussed as both a
+                self-care practice and a possible therapeutic tool. This essay
+                explains the value of breathwork, its effects on the body and
+                mind, and why it is gaining attention in health research.
+              </p>
+
+              <p className="indent-8 text-justify">
+                Breathwork is the practice of using intentional breathing
+                techniques to influence physical, emotional, and mental states.
+                It has become increasingly popular because it is simple, low
+                cost, and easy to practice in many settings. Research suggests
+                that breathwork may help reduce stress, improve mood, and
+                support emotional regulation, which makes it a useful strategy
+                for wellness and mental health. Fincham et al. (2023) found that
+                breathwork was associated with lower stress, anxiety, and
+                depressive symptoms in randomized controlled trials, showing
+                that the practice has measurable benefits. In addition, Yilmaz
+                Balban et al. (2023) reported that “Daily 5-min cyclic sighing
+                has promise as an effective stress management exercise”. Because
+                of these benefits, breathwork is often discussed as both a
+                self-care practice and a possible therapeutic tool. This essay
+                explains the value of breathwork, its effects on the body and
+                mind, and why it is gaining attention in health research.
+              </p>
+
+              <p className="indent-8 text-justify">
+                Breathwork refers to the intentional regulation of breathing
+                Breathwork may also be valuable because it is easy to learn and
+                can be practiced in daily life without special equipment or a
+                large time commitment. That accessibility makes it appealing for
+                people who want simple stress-management tools they can use at
+                home, at work, or before sleep. Although the studies show
+                different breathing methods, the overall pattern suggests that
+                intentional breathing can play a meaningful role in reducing
+                distress and supporting emotional balance. As research
+                continues, breathwork may become an even more widely accepted
+                part of mental health and wellness practices.
               </p>
 
               <div className="space-y-6 pt-8 relative">
@@ -126,19 +132,19 @@ export default function AcademicSynthesis({ isDarkMode }) {
                   </span>
                 </div>
                 <div className="space-y-4 text-xs sm:text-sm font-mono opacity-60 leading-relaxed">
-                  <p>
-                    • Fincham, G. W., et al. (2023). &quot;Effect of breathwork
+                  <p className="pl-8 -indent-8">
+                    Fincham, G. W., et al. (2023). &quot;Effect of breathwork
                     on stress and mental health: A meta-analysis.&quot;{" "}
                     <span className="italic">Scientific Reports</span>.
                   </p>
-                  <p>
-                    • Yilmaz Balban, M., et al. (2023). &quot;Brief structured
+                  <p className="pl-8 -indent-8">
+                    Yilmaz Balban, M., et al. (2023). &quot;Brief structured
                     respiration practices enhance mood and reduce physiological
                     arousal.&quot;{" "}
                     <span className="italic">Cell Reports Medicine</span>.
                   </p>
-                  <p>
-                    • Banushi, B., et al. (2023). &quot;Breathwork interventions
+                  <p className="pl-8 -indent-8">
+                    Banushi, B., et al. (2023). &quot;Breathwork interventions
                     for anxiety: A systematic review and meta-analysis.&quot;{" "}
                     <span className="italic">Frontiers in Psychology</span>.
                   </p>

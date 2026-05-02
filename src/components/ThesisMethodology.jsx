@@ -50,8 +50,9 @@ export default function ThesisMethodology({ isDarkMode }) {
             <p
               className={`text-sm md:text-base max-w-2xl mx-auto leading-relaxed font-medium transition-colors duration-500 ${isDarkMode ? "text-white/80" : "text-slate-500"}`}
             >
-              The following suggestions were synthesized by the Gemini API by
-              analyzing peer-reviewed literature and clinical studies.
+              The following suggestions were synthesized by the Gemini AI model. My
+              statement was simple: “I need you to create 5 thesis statements for
+              each of these research questions.” I chose three options to review with the librarian.
             </p>
           </motion.div>
         </div>
@@ -137,8 +138,7 @@ export default function ThesisMethodology({ isDarkMode }) {
                 >
                   She also warned that AI often suggests paywalled articles and
                   skips foundational context. Ultimately, the library database
-                  proved much more efficient for finding accessible,
-                  peer-reviewed materials.
+                  proved easier access to avoid these paywalls.
                 </p>
               </div>
             </div>

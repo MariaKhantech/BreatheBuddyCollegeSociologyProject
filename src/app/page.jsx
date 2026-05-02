@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 
 import { GoogleGenAI } from "@google/genai";
-
 import NatureEnvironment from "@/components/NatureEnvironment";
 import Navbar from "@/components/Navbar";
 import ChatInterface from "@/components/ChatInterface";
@@ -15,6 +14,7 @@ import ThesisMethodology from "@/components/ThesisMethodology";
 import AcademicSynthesis from "@/components/AcademicSynthesis";
 import BreathworkVideos from "@/components/BreathworkVideos";
 import ConclusionSection from "@/components/ConclusionSection";
+import BackToTop from "@/components/BackToTopButton";
 
 
 
@@ -34,7 +34,6 @@ export default function HomePage() {
   const [userDetailedSensations, setUserDetailedSensations] = useState("");
   const [reflectionSentiment, setReflectionSentiment] = useState(null);
   const [breathworkSuggestion, setBreathworkSuggestion] = useState(null);
-  const [showFutureFeature, setShowFutureFeature] = useState(false);
 
   const [sessionHistory, setSessionHistory] = useState([]);
 
@@ -377,12 +376,26 @@ export default function HomePage() {
             >
               Hi! My name is
               <span className="text-boil inline-block font-bold text-brand-pink mx-1">
-                Maria Khan
+                Maria Khan.
               </span>
-              , and my research was on whether or not AI could help in the field
-              and research of breathwork. I created a prototype AI robot named
-              Breathe Buddy! I hope you enjoy your experience. Remember to click
-              on the robot&apos;s heart to begin.
+              My project explores AI from two different angles. First, I wanted
+              to look at how AI could help breathwork facilitators by building a
+              prototype called Breathe Buddy. That was actually my original plan
+              for the AI added bonus project, but since I couldn&apos;t make it,
+              I rolled it into this presentation. Second, I wanted to test if I
+              could rely on AI to research and write this entire paper on
+              breathwork I hope you enjoy your experience. Remember to click on
+              the robot&apos;s{" "}
+              <span className="text-brand-pink font-bold underline underline-offset-4 decoration-2">
+                heart
+              </span>{" "}
+              to begin.
+            </p>
+            <p
+              className={`text-sm md:text-base max-w-2xl mx-auto mt-8 font-medium italic transition-colors duration-500 ${isDarkMode ? "text-slate-300" : "text-slate-600"}`}
+            >
+              * Please note: The Breathe Buddy prototype is an early build and
+              the bot may contain bugs.
             </p>
           </motion.div>
 
@@ -568,8 +581,8 @@ export default function HomePage() {
         <ThesisMethodology isDarkMode={isDarkMode} />
         <AcademicSynthesis isDarkMode={isDarkMode} />
         <ConclusionSection isDarkMode={isDarkMode} />
-
         <BreathworkVideos isDarkMode={isDarkMode} />
+        <BackToTop /> 
       </main>
 
       <Footer isDarkMode={isDarkMode} />

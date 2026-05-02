@@ -12,25 +12,11 @@ export default function Footer({ isDarkMode }) {
           <Bot className="w-10 h-10" />
           BREATHE BUDDY
         </div>
-        <div className="flex gap-12 text-sm font-bold uppercase tracking-widest text-brand-pink">
-          <a href="#" className="hover:text-brand-cyan transition-colors">
-            Privacy
-          </a>
-          <a href="#" className="hover:text-brand-cyan transition-colors">
-            Terms
-          </a>
-          <a href="#" className="hover:text-brand-cyan transition-colors">
-            Contact
-          </a>
-        </div>
+        
         <div className="text-center md:text-right space-y-2">
-          <p
-            className={`text-sm italic ${isDarkMode ? "text-white/40" : "text-slate-500"}`}
-          >
-            Sustainably developed in the digital garden.
-          </p>
+    
           <p className="text-[10px] font-mono tracking-widest text-brand-cyan uppercase">
-            © 2026 Future Exploration
+            © copyright 2024 Maria Khan
           </p>
         </div>
       </div>

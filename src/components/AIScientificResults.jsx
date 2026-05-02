@@ -36,9 +36,18 @@ export default function AIScientificResults({ isDarkMode }) {
       accent: "text-brand-pink",
       bg: "bg-brand-pink/5",
       items: [
-        { label: "Othership: Breathwork for Healing Trauma", link: "#" },
-        { label: "Firefly Therapy Austin: Breathwork & Trauma", link: "#" },
-        { label: "Healing Brainwaves: Breathwork Guide", link: "#" },
+        {
+          label: "Othership: Breathwork for Healing Trauma",
+          link: "https://www.othership.us/resources/breathwork-for-healing-trauma",
+        },
+        {
+          label: "Firefly Therapy Austin: Breathwork & Trauma",
+          link: "https://www.fireflytherapyaustin.com/breathwork-trauma/",
+        },
+        {
+          label: "Healing Brainwaves: Breathwork Guide",
+          link: "https://healingbrainwaves.org",
+        },
       ],
     },
     {
@@ -48,12 +57,21 @@ export default function AIScientificResults({ isDarkMode }) {
       accent: "text-amber-500",
       bg: "bg-amber-500/5",
       items: [
-        { label: "Breath-Based Meditation & PTSD", sub: "PMC4309518 Study" },
+        {
+          label: "Breath-Based Meditation & PTSD",
+          sub: "PMC4309518 Study",
+          link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4309518/",
+        },
         {
           label: "Treating PTSD with Connected Breathing",
           sub: "Clinical Case Study",
+          link: "https://www.sciencedirect.com/science/article/abs/pii/S2468749920300211",
         },
-        { label: "Breathwork for Chronic Stress", sub: "MDPI Public Health" },
+        {
+          label: "Breathwork for Chronic Stress",
+          sub: "MDPI Public Health",
+          link: "https://www.mdpi.com/2076-3271/13/3/127",
+        },
       ],
     },
   ];
@@ -75,7 +93,7 @@ export default function AIScientificResults({ isDarkMode }) {
         <div className="flex items-center justify-center gap-4">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent to-brand-pink/30" />
           <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-pink shrink-0">
-            Thesis Suggestions AI Part 2
+            Research Suggestions AI Part 2
           </span>
           <div className="h-px flex-1 bg-gradient-to-l from-transparent to-brand-pink/30" />
         </div>
@@ -155,10 +173,17 @@ export default function AIScientificResults({ isDarkMode }) {
               />
 
               <p
-                className={`text-sm md:text-base leading-relaxed text-center font-medium ${isDarkMode ? "text-slate-400" : "text-slate-500"}`}
+                className={`text-sm md:text-base max-w-2xl mx-auto leading-relaxed font-medium transition-colors duration-500 ${isDarkMode ? "text-slate-300" : "text-slate-600"}`}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                I used Claude to research breathwork and trauma, choosing it
+                over ChatGPT to avoid past chat biases. The AI found sources in
+                seconds, but manually verifying the peer-reviewed studies took
+                nearly 30 minutes. The website results were mixed, with one
+                simply being an uninformative facilitator page. However, the
+                book recommendations were excellent and aligned perfectly with
+                texts recommended by actual breathwork facilitators. Overall,
+                this experience highlighted both the promise and the limitations
+                of AI research tools.
               </p>
             </motion.div>
           </div>
