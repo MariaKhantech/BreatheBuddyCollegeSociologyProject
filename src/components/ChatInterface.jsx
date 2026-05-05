@@ -50,7 +50,7 @@ export default function ChatInterface({
               <span
                 className={`font-black text-[10px] tracking-[0.2em] uppercase ${isDarkMode ? "text-brand-pink" : "text-brand-pink/80"}`}
               >
-                Breathing Buddy
+                Breathe Buddy
               </span>
               <div
                 className={`flex items-center gap-1.5 font-mono text-[10px] ${isDarkMode ? "text-brand-cyan/80" : "opacity-40"}`}
