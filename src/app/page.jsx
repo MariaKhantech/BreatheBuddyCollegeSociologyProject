@@ -86,7 +86,7 @@ export default function HomePage() {
         voices[0];
       utterance.voice = preferredVoice;
       utterance.pitch = 1.3;
-      utterance.rate = 0.9;
+      utterance.rate = 1.2;
     } else {
  
       const preferredVoice =
