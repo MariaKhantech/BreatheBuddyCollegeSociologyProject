@@ -35,7 +35,6 @@ export default function HomePage() {
 
   const [sessionHistory, setSessionHistory] = useState([]);
 
-  // Utility function to clean AI-generated text from unwanted characters or formatting
   const cleanAI = (text) => text.replace(/\*/g, "").replace(/\s+/g, " ").trim();
 
   useEffect(() => {
@@ -89,25 +88,25 @@ export default function HomePage() {
       utterance.pitch = 1.3;
       utterance.rate = 0.9;
     } else {
-      // ✅ Mobile — pick the best available voice per platform
+ 
       const preferredVoice =
-        // Android: prefer cloud/network voices (non-local = higher quality)
+  
         voices.find(
           (v) => v.name.includes("Google") && v.lang.startsWith("en"),
         ) ||
         voices.find((v) => v.lang === "en-US" && v.localService === false) ||
-        // iOS: Samantha is Apple's clearest English voice
+  
         voices.find((v) => v.name === "Samantha") ||
         voices.find((v) => v.name.includes("Karen")) ||
         voices.find((v) => v.name.includes("Moira")) ||
-        // Final fallback
+    
         voices.find((v) => v.lang === "en-US") ||
         voices.find((v) => v.lang.startsWith("en")) ||
         voices[0];
       utterance.voice = preferredVoice;
-      // Slightly softer pitch on mobile — most mobile voices sound harsh at 1.3
-      utterance.pitch = 1.1;
-      utterance.rate = 0.88;
+
+      utterance.pitch = 1.2;
+      utterance.rate = 1.0;
     }
 
     window.speechSynthesis.speak(utterance);
@@ -284,7 +283,7 @@ export default function HomePage() {
         model: "gemini-2.5-flash",
         contents: `User felt "${userMood}" before. After breathing: "${userReflection}". Details: "${details}". Suggest a specific breathing technique and 1-sentence encouragement. Under 35 words.`,
       });
-      // ✅ Clean asterisks before display or speech
+    
       const text = cleanAI(
         response.text ||
           "Let's try one more cycle of focus to ground your energy.",
