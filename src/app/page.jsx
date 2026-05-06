@@ -245,7 +245,7 @@ export default function HomePage() {
           contents:
             "The user is feeling good after breathing. Provide a beautiful 1-sentence closing blessing. Under 25 words.",
         });
-        // ✅ Clean asterisks before display or speech
+        // Clean asterisks before display or speech
         const cleanedText = cleanAI(
           finalResponse.text ||
             "May your peace follow you through the rest of your day.",
