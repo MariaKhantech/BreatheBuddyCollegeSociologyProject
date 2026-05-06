@@ -106,7 +106,7 @@ export default function HomePage() {
       utterance.voice = preferredVoice;
 
       utterance.pitch = 1.7;
-      utterance.rate = 1.1;
+      utterance.rate = 1.0;
     }
 
     window.speechSynthesis.speak(utterance);
