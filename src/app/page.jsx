@@ -60,9 +60,11 @@ export default function HomePage() {
   const speakHi = (customText, onEnd) => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
     window.speechSynthesis.cancel();
+
     const text = customText || "Hi there! I'm your AI wellness companion.";
     setChatMessage(text);
     const utterance = new SpeechSynthesisUtterance(text);
+
     utterance.onstart = () => setIsSpeaking(true);
     utterance.onend = () => {
       setIsSpeaking(false);
@@ -72,14 +74,42 @@ export default function HomePage() {
       setIsSpeaking(false);
       if (onEnd) onEnd();
     };
+
     const voices = window.speechSynthesis.getVoices();
-    utterance.voice =
-      voices.find((v) => v.name.includes("Google US English")) ||
-      voices.find((v) => v.name.includes("Female")) ||
-      voices.find((v) => v.lang.startsWith("en")) ||
-      voices[0];
-    utterance.pitch = 1.3;
-    utterance.rate = 0.9;
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (!isMobile) {
+      // ✅ Desktop — keep exactly as it was, nothing changes
+      const preferredVoice =
+        voices.find((v) => v.name.includes("Google US English")) ||
+        voices.find((v) => v.name.includes("Female")) ||
+        voices.find((v) => v.lang.startsWith("en")) ||
+        voices[0];
+      utterance.voice = preferredVoice;
+      utterance.pitch = 1.3;
+      utterance.rate = 0.9;
+    } else {
+      // ✅ Mobile — pick the best available voice per platform
+      const preferredVoice =
+        // Android: prefer cloud/network voices (non-local = higher quality)
+        voices.find(
+          (v) => v.name.includes("Google") && v.lang.startsWith("en"),
+        ) ||
+        voices.find((v) => v.lang === "en-US" && v.localService === false) ||
+        // iOS: Samantha is Apple's clearest English voice
+        voices.find((v) => v.name === "Samantha") ||
+        voices.find((v) => v.name.includes("Karen")) ||
+        voices.find((v) => v.name.includes("Moira")) ||
+        // Final fallback
+        voices.find((v) => v.lang === "en-US") ||
+        voices.find((v) => v.lang.startsWith("en")) ||
+        voices[0];
+      utterance.voice = preferredVoice;
+      // Slightly softer pitch on mobile — most mobile voices sound harsh at 1.3
+      utterance.pitch = 1.1;
+      utterance.rate = 0.88;
+    }
+
     window.speechSynthesis.speak(utterance);
   };
 
