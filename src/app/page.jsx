@@ -16,8 +16,6 @@ import BreathworkVideos from "@/components/BreathworkVideos";
 import ConclusionSection from "@/components/ConclusionSection";
 import BackToTop from "@/components/BackToTopButton";
 
-
-
 export default function HomePage() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isEnvironmentBright, setIsEnvironmentBright] = useState(false);
@@ -36,6 +34,9 @@ export default function HomePage() {
   const [breathworkSuggestion, setBreathworkSuggestion] = useState(null);
 
   const [sessionHistory, setSessionHistory] = useState([]);
+
+  // Utility function to clean AI-generated text from unwanted characters or formatting
+  const cleanAI = (text) => text.replace(/\*/g, "").replace(/\s+/g, " ").trim();
 
   useEffect(() => {
     const saved = localStorage.getItem("wellness_history");
@@ -186,6 +187,7 @@ export default function HomePage() {
   };
 
   const handleReflectionSubmit = async (reflection) => {
+    console.log("User reflection submitted:", reflection);
     if (!reflection.trim()) return;
     setIsAiThinking(true);
     setUserReflection("");
@@ -214,9 +216,11 @@ export default function HomePage() {
           contents:
             "The user is feeling good after breathing. Provide a beautiful 1-sentence closing blessing. Under 25 words.",
         });
-        const cleanedText =
+        // ✅ Clean asterisks before display or speech
+        const cleanedText = cleanAI(
           finalResponse.text ||
-          "May your peace follow you through the rest of your day.";
+            "May your peace follow you through the rest of your day.",
+        );
         setChatMessage(cleanedText);
         setBreathworkSuggestion(cleanedText);
         speakHi(cleanedText);
@@ -238,6 +242,7 @@ export default function HomePage() {
   };
 
   const handleDetailedReflectionSubmit = async (details) => {
+    console.log("User detailed sensations submitted:", details);
     if (!details.trim()) return;
     setIsAiThinking(true);
     setUserDetailedSensations("");
@@ -249,9 +254,11 @@ export default function HomePage() {
         model: "gemini-2.5-flash",
         contents: `User felt "${userMood}" before. After breathing: "${userReflection}". Details: "${details}". Suggest a specific breathing technique and 1-sentence encouragement. Under 35 words.`,
       });
-      const text =
+      // ✅ Clean asterisks before display or speech
+      const text = cleanAI(
         response.text ||
-        "Let's try one more cycle of focus to ground your energy.";
+          "Let's try one more cycle of focus to ground your energy.",
+      );
       setChatMessage(text);
       setBreathworkSuggestion(text);
       speakHi(text);
@@ -582,7 +589,7 @@ export default function HomePage() {
         <AcademicSynthesis isDarkMode={isDarkMode} />
         <ConclusionSection isDarkMode={isDarkMode} />
         <BreathworkVideos isDarkMode={isDarkMode} />
-        <BackToTop /> 
+        <BackToTop />
       </main>
 
       <Footer isDarkMode={isDarkMode} />
