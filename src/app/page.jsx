@@ -105,7 +105,7 @@ export default function HomePage() {
         voices[0];
       utterance.voice = preferredVoice;
 
-      utterance.pitch = 1.5;
+      utterance.pitch = 1.3;
       utterance.rate = 0.9;
     }
 
