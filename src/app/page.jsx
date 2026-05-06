@@ -85,7 +85,7 @@ export default function HomePage() {
         voices.find((v) => v.lang.startsWith("en")) ||
         voices[0];
       utterance.voice = preferredVoice;
-      utterance.pitch = .7;
+      utterance.pitch = .5;
       utterance.rate = 2.0;
     } else {
  
