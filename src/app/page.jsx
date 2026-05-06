@@ -78,7 +78,7 @@ export default function HomePage() {
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     if (!isMobile) {
-      // ✅ Desktop — keep exactly as it was, nothing changes
+      // Desktop — keep exactly as it was, nothing changes
       const preferredVoice =
         voices.find((v) => v.name.includes("Google US English")) ||
         voices.find((v) => v.name.includes("Female")) ||
@@ -105,8 +105,8 @@ export default function HomePage() {
         voices[0];
       utterance.voice = preferredVoice;
 
-      utterance.pitch = 1.3;
-      utterance.rate = 1.2;
+      utterance.pitch = 1.5;
+      utterance.rate = 1.5;
     }
 
     window.speechSynthesis.speak(utterance);
